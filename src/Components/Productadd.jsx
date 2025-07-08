@@ -69,7 +69,7 @@ const Productadd = ({ animationtype, headertext, color, insidetext, bgimage }) =
                     {insidetext}
                 </p>
                 <div className="mt-6 self-center">
-                    <Button text="Buy Now &#8594;" />
+                    <Button text="Buy Now &#8594;" bgcolor={"bg-green-900"} />
                 </div>
             </div>
 

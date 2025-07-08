@@ -1,76 +1,69 @@
-import React, { useState } from 'react';
-
+import React from 'react';
+import Button from './Button';
 const SignIn = () => {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log('Login attempt:', { username, password });
-    };
-
     return (
-        <div className="m-0 p-0 font-sans box-border flex justify-center items-center min-h-screen text-white bg-[#081b29]">
-            <div className="relative h-[450px] w-[750px] border-2 border-blue-400 bg-transparent shadow-[0_0_15px_skyblue] overflow-hidden">
-                {/* Background Design */}
-                <span className="absolute top-0 right-0 h-[600px] w-[850px] border-2 border-blue-400 bg-gradient-to-br from-black to-blue-400 transform rotate-[10deg] skew-y-[40deg] origin-bottom-right"></span>
+        <div className="flex min-h-screen justify-center items-center">
+            <div className="flex flex-col h-auto w-full max-w-md sm:w-[90%] md:w-[70%] lg:w-[50%] xl:w-[40%] border-2  p-8 rounded-xl shadow-lg gap-3 shadow">
+                <h2 className="font-bold text-3xl text-center mb-6">Sign In</h2>
 
-                {/* Login Form */}
-                <div className="absolute top-0 left-0 h-full w-1/2 flex flex-col justify-center pl-10 pr-15">
-                    <h2 className="text-center text-white  text-4xl  mb-6">Login</h2>
-                    <div onSubmit={handleSubmit}>
-                        <div className="relative h-[50px] w-full my-6 gap-5">
-                            <input
-                                type="text"
-                                required
-                                value={username}
-                                onChange={(e) => setUsername(e.target.value)}
-                                className="h-full w-full border-none outline-none pr-6 bg-transparent text-white border-b-2 border-white text-base transition-all duration-300 ease-in-out hover:border-b-[#00bfff] hover:shadow-[0_5px_5px_-2px_#00bfff] focus:border-b-[#00bfff] focus:shadow-[0_5px_5px_-2px_#00bfff] valid:border-b-[#00bfff] valid:shadow-[0_5px_5px_-2px_#00bfff] peer"
-                            />
-                            <label className="absolute left-0 top-1/2 transform -translate-y-1/2 transition-all duration-500 pointer-events-none peer-hover:top-[-5px] peer-hover:text-blue-400 peer-focus:top-[-5px] peer-focus:text-blue-400 peer-valid:top-[-5px] peer-valid:text-blue-400">
-                                Username
-                            </label>
-                            <i className="bx bx-user absolute right-0 top-1/2 transform -translate-y-1/2 text-xl transition-colors duration-300"></i>
-                        </div>
+                {/* Input Field */}
+                <div className="relative w-full h-[60px] mb-4">
+                    <input
+                        type="text"
+                        id="email"
+                        required
+                        className="peer w-full rounded-2xl  h-full px-3 pt-6 pb-1 border-2 border-black bg-transparent text-black placeholder-transparent focus:outline-none focus:border-black"
+                        placeholder="Email"
+                    />
+                    <label
+                        htmlFor="email"
+                        className="absolute left-3 top-1/2 transform -translate-y-1/2 text-black text-base transition-all duration-300
+                        peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base
+                        peer-focus:top-1 peer-focus:text-sm peer-focus:bg-black peer-focus:text-white peer-focus:px-1 peer-focus:rounded
+                        peer-hover:top-1 peer-hover:text-sm peer-hover:text-white peer-hover:bg-black peer-hover:px-1 peer-hover:rounded
+                        peer-not-placeholder-shown:top-1 peer-not-placeholder-shown:text-base peer-not-placeholder-shown:bg-black peer-not-placeholder-shown:px-1 peer-not-placeholder-shown:rounded peer-not-placeholder-shown:text-white"
 
-                        <div className="relative h-[50px] w-full my-6">
-                            <input
-                                type="password"
-                                required
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                className="h-full w-full border-none outline-none pr-6 bg-transparent text-white border-b-2 border-white text-base transition-all duration-300 ease-in-out hover:border-b-[#00bfff] hover:shadow-[0_5px_5px_-2px_#00bfff] focus:border-b-[#00bfff] focus:shadow-[0_5px_5px_-2px_#00bfff] valid:border-b-[#00bfff] valid:shadow-[0_5px_5px_-2px_#00bfff] peer"
-                            />
-                            <label className="absolute left-0 top-1/2 transform -translate-y-1/2 transition-all duration-500 pointer-events-none peer-hover:top-[-5px] peer-hover:text-blue-400 peer-focus:top-[-5px] peer-focus:text-blue-400 peer-valid:top-[-5px] peer-valid:text-blue-400">
-                                Password
-                            </label>
-                            <i className="bx bx-lock-alt absolute right-0 top-1/2 transform -translate-y-1/2 text-xl transition-colors duration-300"></i>
-                        </div>
-
-                        <button
-                            type="submit"
-                            onClick={handleSubmit}
-                            className="relative h-[50px] w-full bg-transparent border-2 border-blue-400 rounded-[30px] cursor-pointer text-base font-semibold text-white overflow-hidden hover:bg-gradient-to-br hover:from-black hover:to-blue-400 transition-all duration-300 mt-4"
-                        >
-                            Log in
-                        </button>
-
-                        <div className="text-base text-center mt-6 mb-2">
-                            <p>
-                                Don't have an account yet??{' '}
-                                <a href="#" className="font-semibold underline text-blue-400 hover:text-blue-300">
-                                    Sign up
-                                </a>
-                            </p>
-                        </div>
-                    </div>
+                    >
+                        Email
+                    </label>
                 </div>
 
-                {/* Info Text */}
-                <div className="absolute top-0 right-0 w-1/2 h-full flex flex-col justify-center pl-[150px] pr-10 pb-15">
-                    <h2 className="text-4xl leading-relaxed">Welcome</h2>
-                    <p>Welcome to ACU-Weather</p>
+                {/* password Field */}
+                <div className="relative w-full h-[60px] mb-4">
+                    <input
+                        type="password"
+                        id="password"
+                        required
+                        className="peer w-full rounded-2xl  h-full px-3 pt-6 pb-1 border-2 border-black bg-transparent text-black placeholder-transparent focus:outline-none focus:border-black"
+                        placeholder="Password"
+                    />
+                    <label
+                        htmlFor="password"
+                        className="absolute left-3 top-1/2 transform -translate-y-1/2 text-black text-base transition-all duration-300
+                        peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base
+                        peer-focus:top-1 peer-focus:text-sm peer-focus:bg-black peer-focus:text-white peer-focus:px-1 peer-focus:rounded
+                        peer-hover:top-1 peer-hover:text-sm peer-hover:text-white peer-hover:bg-black peer-hover:px-1 peer-hover:rounded
+                        peer-not-placeholder-shown:top-1 peer-not-placeholder-shown:text-base peer-not-placeholder-shown:bg-black peer-not-placeholder-shown:px-1 peer-not-placeholder-shown:rounded peer-not-placeholder-shown:text-white"
+
+                    >
+                        Password
+                    </label>
                 </div>
+
+                {/* Remember Me + Forgot Password (same line) */}
+                <div className="flex items-center justify-between mb-6">
+                    <label className="flex items-center space-x-2 text-gray-700 cursor-pointer">
+                        <input type="checkbox" className="form-checkbox h-4 w-4 text-black accent-black" />
+                        <span>Remember Me</span>
+                    </label>
+                    <a href="#" className="text-black hover:font-bold underline text-sm ">
+                        Forgot Password?
+                    </a>
+                </div>
+                <div className='flex justify-center '>
+                    <Button text='login' bgcolor={"bg-black"} />
+                </div>
+
             </div>
         </div>
     );

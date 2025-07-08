@@ -12,12 +12,13 @@ import image3 from './assets/Favourite.jpg'
 import Productcart from './Productcart'
 import Footer from './footer'
 import Signin from './Components/Signin'
+import Signup from './Components/Signup'
 function Home() {
   return (
     <>
       <Navigation />
       <div className='flex h-[450px] w-full justify-center'>
-        <div className="flex h-[450px] w-[90%] bg-gray-700 bg-no-repeat bg-cover items-center p-6 rounded-3xl gap-8">
+        <div className="flex h-[450px] w-[90%] bg-gray-700 bg-no-repeat bg-cover justify-between items-center p-6 rounded-3xl gap-8">
           <Productadd
             animationtype='usestate'
             headertext={"New Arrival!!"}
@@ -64,6 +65,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signin" element={<Signin />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
     </BrowserRouter>
   )

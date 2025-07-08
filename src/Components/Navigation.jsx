@@ -17,9 +17,9 @@ const Navigation = () => {
                         <li>Contact</li>
                     </ul>
                     {/* <button className='h-11 w-17 bg-green-900 rounded font-bold text-green-50'> Log in</button> */}
-                    <Button text='Log in' />
+                    <Button text='Log in' bgcolor={"bg-green-900"} onClick={() => navigate('/signin')} />
                 </div >
-                <Button text='Sign up' onClick={() => navigate('/signin')} />
+                <Button text='Sign up' bgcolor={"bg-green-900"} onClick={() => navigate('/signup')} />
             </div>
         </>
     );

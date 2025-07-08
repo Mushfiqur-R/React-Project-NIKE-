@@ -1,5 +1,6 @@
 import React from 'react'
 import Button from './Components/Button'
+import { green } from '@mui/material/colors'
 const Productcart = () => {
     return (
         <div className="bg-white  rounded-xl shadow-lg w-[25%] h-150 hover:shadow-xl transition-shadow duration-300 overflow-hidden ">
@@ -37,7 +38,7 @@ const Productcart = () => {
                     {/* <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200 transform hover:scale-105">
                         Buy Now
                     </button> */}
-                    <Button />
+                    <Button text='Buy Now' bgcolor={"bg-green-900"} />
                 </div>
             </div>
         </div >
